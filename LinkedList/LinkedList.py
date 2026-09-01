@@ -61,13 +61,19 @@ class LinkedList:
     def get(self, index) -> Node | None:
         if index >= self.length or index < 0:
             return None
-        counter = 0
         temp = self.head
         for _ in range(index):
             temp = temp.next
         return temp
 
-    def insert(self, value, index):
+    def set_value(self, index, value) -> bool:
+        temp = self.get(index)
+        if temp:
+            temp.value = value
+            return True
+        return False
+
+    def insert(self, index, value):
         return
 
     def print_list(self):
@@ -80,6 +86,7 @@ my_linked_list = LinkedList(1)
 my_linked_list.append(2)
 my_linked_list.prepend(0)
 my_linked_list.append(3)
+my_linked_list.set_value(3, 4)
 #my_linked_list.pop()
 #my_linked_list.pop_first()
 my_linked_list.print_list()
