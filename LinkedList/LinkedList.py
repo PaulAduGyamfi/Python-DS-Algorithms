@@ -47,6 +47,17 @@ class LinkedList:
         self.length += 1
         return True
 
+    def pop_first(self) -> Node | None:
+        if self.length == 0:
+            return None
+        temp = self.head
+        self.head = self.head.next
+        temp.next = None
+        self.length -= 1
+        if self.length == 0:
+            self.tail = None
+        return temp
+
     def insert(self, value, index):
         return
 
@@ -60,4 +71,5 @@ my_linked_list = LinkedList(1)
 my_linked_list.append(2)
 my_linked_list.prepend(0)
 my_linked_list.pop()
+my_linked_list.pop_first()
 my_linked_list.print_list()
