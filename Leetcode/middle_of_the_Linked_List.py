@@ -28,12 +28,12 @@ The method should only traverse the linked list once.  In other words, you can o
 # ---------------------------------- #
 
 def find_middle_node(self):
-        if self.head is None:
-            return None
-        if self.head == self.tail:
-            return self.head
-        slow, fast = self.head, self.head
-        while(fast is not None and fast.next):
-            fast = fast.next.next
-            slow = slow.next
-        return slow
+    if self.head is None:
+        return None
+    if self.head == self.tail:
+        return self.head
+    slow, fast = self.head, self.head
+    while(fast is not None and fast.next):
+        fast = fast.next.next
+        slow = slow.next
+    return slow
