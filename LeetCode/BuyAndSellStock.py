@@ -1,4 +1,8 @@
 def maxProfit(prices: list[int]):
+    """
+    Return the maximum profit you can achieve from this transaction. 
+    If you cannot achieve any profit, return 0.
+    """
     max_profit = 0
     min_price = float("inf")
 
